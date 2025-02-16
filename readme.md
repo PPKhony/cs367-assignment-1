@@ -1,70 +1,59 @@
-# Assignment 1
+# CS367 Web Development Service : Assignment 1
 
 ## Problem Statement
 
-When we purchase items, we need to store them in a specific location and remember where they are stored. When these items are used by us or others, we need to keep track of where they were taken and who used them (if known). In case someone borrows an item and returns it, we should know that it has been returned and where it is stored again. 
+When we manage a library, we need to store books in specific locations and remember where they are stored. When these books are borrowed by users, we need to keep track of who borrowed them and when. If a book is returned, we should know that it has been returned and where it is stored again.
 
-If we need to remember, record, and track these details manually, it might be cumbersome. Therefore, we need a system to manage this process efficiently.
+Manually recording and tracking these details can be cumbersome. Therefore, we need a system to manage this process efficiently.
 
-## Objective
+## How to Run
 
-Create a system that:
-1. Records the storage location of purchased items.
-2. Tracks the usage of items, including who used them and where they were taken.
-3. Logs the return of borrowed items and updates their storage location.
+This project was clean already.
+To build and run the project, follow these steps:
 
-This system should simplify the process of managing and tracking items, reducing the need for manual effort.
+1. **Navigate to the project directory**:
+    ```sh
+    cd ./Assignment-1
+    ```
 
-## Sample path
-### API Endpoints
+2. **Build the project using Maven**:
+    ```sh
+    mvn install
+    ```
 
-#### Get all tools
-```
-GET http://localhost:8080/handytools
-```
+3. **Run the application**:
+    ```sh
+    mvn spring-boot:run
+    ```
 
-#### Get tool by ID
-```
-GET http://localhost:8080/handytools/25
-```
+Make sure you have Maven installed and properly configured on your system before running these commands.
 
-#### Create a new tool
-```
-POST http://localhost:8080/handytools
-Content-Type: application/json
-Sample Body
-{
-    "name": "Hammer",
-    "category": "Hand Tools",
-    "owner": "John Doe",
-    "condition": "New",
-    "availability": true,
-    "lastUsedDate": "2023-10-01",
-    "location": "Garage",
-    "specifications": "16 oz",
-    "notes": "None"
-}
-```
+## Attributes
 
-#### Update an existing tool
-```
-PUT http://localhost:8080/handytools/9
-Content-Type: application/json
-Sample Body
-{
-    "name": "Hammer",
-    "category": "Hand Tools",
-    "owner": "Jane Doe",
-    "condition": "Used",
-    "availability": false,
-    "lastUsedDate": "2023-10-10",
-    "location": "Workshop",
-    "specifications": "16 oz",
-    "notes": "Handle slightly worn"
-}
-```
+### Book Attributes
+- **id**: Unique identifier for the book.
+- **name**: Name of the book.
+- **category**: Category or genre of the book.
+- **description**: Brief description of the book.
+- **author**: Author of the book.
+- **publisher**: Publisher of the book.
+- **publishedDate**: Date when the book was published.
+- **pages**: Number of pages in the book.
+- **language**: Language in which the book is written.
+- **isbn**: International Standard Book Number.
+- **shelfNumber**: Shelf number where the book is placed.
+- **status**: Current status of the book (BORROWED, AVAILABLE, LOSTED).
+- **borrowerID**: ID of the user who borrowed the book.
+- **proceedByCounterID**: ID of the counter that processed the borrowing.
+- **borrowedDate**: Date when the book was borrowed.
+- **returnDate**: Date when the book is expected to be returned.
+- **additionalInfo**: Additional information about the book.
 
-#### Delete a tool
-```
-DELETE http://localhost:8080/handytools/25
-```
+### User Attributes
+- **id**: Unique identifier for the user.
+- **name**: Name of the user.
+- **email**: Email address of the user.
+- **role**: Role of the user (e.g., student, teacher).
+- **address**: Address of the user.
+- **phoneNumber**: Phone number of the user.
+- **numberOfBorrowBook**: Number of books currently borrowed by the user.

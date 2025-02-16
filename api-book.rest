@@ -1,0 +1,70 @@
+### Get all books (Init wiith 2 Books)
+GET http://localhost:8080/books
+Accept: application/json
+
+###
+
+### Get a book by ID
+GET http://localhost:8080/books/2
+Accept: application/json
+
+###
+
+### Create a new book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "name": "Sample Book",
+    "category": "Fiction",
+    "description": "A sample book description.",
+    "author": "Sample Author",
+    "publisher": "Sample Publisher",
+    "publishedDate": "2023-10-01",
+    "pages": 300,
+    "language": "English",
+    "isbn": "123-4567890123",
+    "shelfNumber": "A1",
+    "status": "AVAILABLE",
+    "borrowerID": null,
+    "proceedByCounterID": null,
+    "borrowedDate": null,
+    "returnDate": null,
+    "additionalInfo": {
+        "note": "This is a sample note."
+    }
+}
+
+### Get a new up date book by ID
+GET http://localhost:8080/books/3
+Accept: application/json
+
+### Update a bookshelf by ID
+PUT http://localhost:8080/books/3
+Content-Type: application/json
+
+{
+    "name": "Sample Book",
+    "category": "Fiction",
+    "description": "A sample book description.",
+    "author": "Sample Author",
+    "publisher": "Sample Publisher",
+    "publishedDate": "2023-10-01",
+    "pages": 300,
+    "language": "English",
+    "isbn": "123-4567890123",
+    "shelfNumber": "A2",
+    "status": "AVAILABLE",
+    "borrowerID": null,
+    "proceedByCounterID": null,
+    "borrowedDate": null,
+    "returnDate": null,
+    "additionalInfo": {
+        "note": "This is a sample note."
+    }
+}
+###
+
+### Delete a book by ID
+DELETE http://localhost:8080/books/3
+Accept: application/json
