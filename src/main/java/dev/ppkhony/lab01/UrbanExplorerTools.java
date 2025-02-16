@@ -21,6 +21,9 @@ public class UrbanExplorerTools   {
     private String location;
     private String specifications;
     private String notes;
+
+    UrbanExplorerTools() {}
+    
     public UrbanExplorerTools( String name, String category, String owner, String condition,
             boolean availability, LocalDate lastUsedDate, String location, String specifications, String notes) {
        

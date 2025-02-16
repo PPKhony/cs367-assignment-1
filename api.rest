@@ -1,0 +1,40 @@
+### Get all tools
+GET http://localhost:8080/handytools
+
+### Get tool by ID
+GET http://localhost:8080/handytools/25
+
+### Create a new tool
+POST http://localhost:8080/handytools
+Content-Type: application/json
+
+{
+    "name": "Hammer",
+    "category": "Hand Tools",
+    "owner": "John Doe",
+    "condition": "New",
+    "availability": true,
+    "lastUsedDate": "2023-10-01",
+    "location": "Garage",
+    "specifications": "16 oz",
+    "notes": "None"
+}
+
+### Update an existing tool
+PUT http://localhost:8080/handytools/9
+Content-Type: application/json
+
+{
+    "name": "Hammer",
+    "category": "Hand Tools",
+    "owner": "Jane Doe",
+    "condition": "Used",
+    "availability": false,
+    "lastUsedDate": "2023-10-10",
+    "location": "Workshop",
+    "specifications": "16 o",
+    "notes": "Handle slightly worn" 
+}
+
+### Delete a tool
+DELETE http://localhost:8080/handytools/25
